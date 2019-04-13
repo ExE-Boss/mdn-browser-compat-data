@@ -10,11 +10,10 @@ for (const browser of Object.keys(browsers)) {
 
 function isValidVersion(browserIdentifier, version) {
   if (typeof version === "string") {
-    let rawVersion = version;
-    if (rawVersion.startsWith('<=')) {
-      rawVersion = rawVersion.substring(2);
+    if (version.startsWith('<=')) {
+      version = version.substring(2);
     }
-    return validBrowserVersions[browserIdentifier].includes(rawVersion);
+    return validBrowserVersions[browserIdentifier].includes(version);
   } else {
     return true;
   }
